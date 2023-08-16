@@ -16,7 +16,7 @@ interface ProductPageProps {
 const ProductPage: React.FC<ProductPageProps> = async ({ params }) => {
 	const product = await getProduct(params.productId);
 	const suggestedProducts = await getProducts({
-		categoryId: product?.category?.id as string,
+		categoryId: product?.category?.id,
 	});
 
 	if (!product) {
